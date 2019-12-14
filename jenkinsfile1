@@ -11,3 +11,4 @@ stage('Compile-Package'){
      sh 'scp -o StrictHostKeyChecking=no target/myweb-0.0.1.war root@localhost:/opt/apache-tomcat-8.5.47/webapps/'
      }
      }
+     }
