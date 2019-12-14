@@ -6,4 +6,7 @@ stage('Compile-Package'){
      sh 'mvn clean'
      sh 'mvn package'
      }
+   stage('Copy war file to webapps'){
+     sh 'cp cd /var/lib/jenkins/workspace/my-app-webapp1/target/myweb-0.0.1.war /opt/apache-tomcat-8.5.47/webapps/'
+     }
      }
