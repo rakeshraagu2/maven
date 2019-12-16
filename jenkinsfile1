@@ -8,7 +8,7 @@ stage('Compile-Package'){
      }
    stage('Copy war file to webapps'){
      sshagent (['1']){
-     sh 'scp -o StrictHostKeyChecking=no target/*.war root@192.168.43.168:/opt/apache-tomcat-8.5.47/webapps/'
+     sh 'scp -o StrictHostKeyChecking=no target/*.war rakesh@192.168.43.168:/opt/apache-tomcat-8.5.47/webapps/'
      }
      }
      }
