@@ -8,6 +8,7 @@ stage('Compile-Package'){
      }
 stage('deploying war to web server')
 sshagent(['webserver']) {
+    // some block
      sh 'scp -r StrictHostKeyChecking=no target/*.war  ec2-user@34.207.192.47:/opt/apache-tomcat-9.0.21/webapps/'
     // copy war to webserver
      }
