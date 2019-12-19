@@ -7,8 +7,8 @@ stage('Compile-Package'){
      sh 'mvn package'
      }
 stage('deploying war to web server')
-sshagent(credentials:['webserver']) {
-     sh ''scp -r StrictHostKeyChecking=no target/*.war  ec2-user@52.207.209.251:/opt/apache-tomcat-9.0.21/webapps/''
+sshagent(['webserver']) {
+     sh 'scp -r StrictHostKeyChecking=no target/*.war  ec2-user@34.207.192.47:/opt/apache-tomcat-9.0.21/webapps/'
     // copy war to webserver
      }
     }
