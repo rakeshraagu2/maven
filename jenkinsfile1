@@ -12,4 +12,9 @@ sshagent(['webserver']) {
      sh 'scp -o StrictHostKeyChecking=no target/*.war  ec2-user@34.207.192.47:/opt/apache-tomcat-9.0.21/webapps/'
     // copy war to webserver
      }
+    stage('email if deployment is successfull'){
+    mail bcc: '', body: 'War file has been successfully deployed',
+    cc: 'shamika_ust@outlook.com', from: '', 
+    replyTo: '', subject: 'Jenkins build succefull', to: 'shamikabambade.sb@gmail.com'
+    }
     }
